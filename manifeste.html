@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ===== MODIFIER : titre onglet ===== -->
+  <title>AgroLink — Notre Manifeste</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── styles propres à la page Manifeste ── */
+
+    /* section mission deux colonnes */
+    .mission-wrap { display:flex; gap:70px; align-items:center; }
+    .mission-tag  { writing-mode:vertical-rl; text-transform:uppercase; letter-spacing:4px; font-size:.75rem; font-weight:700; color:var(--vert-clair); flex-shrink:0; }
+    @media(max-width:800px){ .mission-wrap{flex-direction:column;gap:20px;} .mission-tag{writing-mode:horizontal-tb;} }
+
+    /* valeurs grille */
+    .valeurs-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:2px; }
+    .valeur-item  { padding:40px 30px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); border-radius:8px; transition:background .3s; cursor:default; }
+    .valeur-item:hover { background:rgba(255,255,255,.1); }
+    /* ===== MODIFIER : icone, titre, texte de chaque valeur ===== */
+    .valeur-item .vi { font-size:2rem; margin-bottom:16px; }
+    .valeur-item h3  { font-family:var(--font-titre); font-size:1.35rem; font-weight:700; color:var(--vert-clair); margin-bottom:10px; }
+    .valeur-item p   { font-size:.88rem; opacity:.8; line-height:1.65; }
+
+    /* citation fondateur */
+    .citation-wrap { display:flex; gap:56px; align-items:center; }
+    .fondateur-img { width:190px; height:190px; border-radius:50%; object-fit:cover; flex-shrink:0; box-shadow:0 8px 30px rgba(0,0,0,.15); border:4px solid var(--blanc); }
+    .guillemet     { font-family:var(--font-titre); font-size:5rem; line-height:.5; color:var(--vert-clair); margin-bottom:14px; }
+    /* ===== MODIFIER : citation, nom, titre fondateur ===== */
+    blockquote     { font-family:var(--font-titre); font-size:clamp(1rem,2vw,1.25rem); font-style:italic; color:var(--texte); line-height:1.75; margin-bottom:24px; }
+    .fond-nom      { font-weight:700; font-size:1rem; color:var(--vert-fonce); }
+    .fond-titre    { font-size:.85rem; color:var(--texte-doux); margin-top:4px; }
+    @media(max-width:800px){ .citation-wrap{flex-direction:column;text-align:center;} }
+
+    /* section engagements fond image */
+    .eng-section { position:relative; padding:120px 8%; overflow:hidden; text-align:center; color:var(--blanc); }
+    .eng-bg { position:absolute; inset:0;
+      background:linear-gradient(rgba(26,60,43,.82),rgba(26,60,43,.82)),
+      url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1600&q=80') center/cover; }
+    .eng-content { position:relative; max-width:740px; margin:0 auto; }
+    /* ===== MODIFIER : titre, texte, slogan engagements ===== */
+    .eng-content h2 { font-family:var(--font-titre); font-size:clamp(1.8rem,4vw,3rem); font-weight:900; line-height:1.2; margin-bottom:22px; }
+    .eng-content p  { font-size:1.05rem; opacity:.88; line-height:1.75; margin-bottom:36px; }
+    .slogan { font-family:var(--font-titre); font-size:1.2rem; font-style:italic; opacity:.65; margin-top:44px; }
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+
+  <!-- NAVBAR -->
+  <header id="navbar">
+    <a href="index.html" class="logo">AgroLink</a>
+    <div id="menu-toggle"><span></span><span></span><span></span></div>
+    <nav id="main-nav">
+      <a href="index.html">Accueil</a>
+      <a href="manifeste.html">Manifeste</a>
+      <a href="projets.html">Projets</a>
+      <a href="investir.html">Investir</a>
+      <a href="partenaires.html">Partenaires</a>
+      <a href="contact.html">Contact</a>
+      <a href="projets.html" class="btn-nav">Découvrir les projets</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-bg" style="background:
+      linear-gradient(to top,rgba(26,60,43,.68) 30%,transparent 80%),
+      url('https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=1600&q=80') center/cover;"></div>
+    <div class="hero-content">
+      <!-- ===== MODIFIER : label, titre, sous-titre ===== -->
+      <span class="hero-label">Notre manifeste</span>
+      <h1>Recréer du lien entre<br />le monde agricole<br />et la société.</h1>
+      <p class="hero-sub">Chez AgroLink, nous croyons que la transition agricole est la réponse à tous les défis de notre siècle.</p>
+    </div>
+  </section>
+
+  <!-- SECTION MISSION -->
+  <section class="pad bg-blanc">
+    <div class="mission-wrap reveal">
+      <div class="mission-tag">Notre mission</div>
+      <div>
+        <!-- ===== MODIFIER : titre mission ===== -->
+        <h2 class="section-title">Accélérer la transition agroécologique grâce au financement collectif.</h2>
+        <div class="sep"></div>
+        <!-- ===== MODIFIER : paragraphe mission ===== -->
+        <p class="section-sub">
+          Chez AgroLink, nous sommes conscients des défis alimentaires, environnementaux et climatiques de notre époque.
+          Pour nous, la transition agricole est la réponse à ces enjeux. Afin de l'accélérer, nous créons des liens entre
+          porteurs de projets, citoyens et institutions pour que chacun puisse contribuer à son échelle.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION RAISON D'ÊTRE — 3 acteurs -->
+  <section class="pad bg-beige">
+    <div class="reveal">
+      <p class="section-label">Raison d'être</p>
+      <!-- ===== MODIFIER : slogan ===== -->
+      <h2 class="section-title">L'avenir est agricole, cultivons-le ensemble.</h2>
+      <div class="sep"></div>
+    </div>
+    <div class="cards-grid">
+      <!-- ===== MODIFIER : chaque carte ===== -->
+      <article class="card reveal">
+        <img class="card-img" src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=700&q=80" alt="Porteurs de projets" />
+        <div class="card-body">
+          <h3>Les porteurs de projets</h3>
+          <p>Agriculteurs ou entrepreneurs, ils ont en commun l'envie de s'engager pour demain. Nous accélérons leurs projets à impact positif.</p>
+          <a href="contact.html" class="btn btn-primary">Financer mon projet</a>
+        </div>
+      </article>
+      <article class="card reveal reveal-delay-1">
+        <img class="card-img" src="https://images.unsplash.com/photo-1506617564039-2f3b650b7010?w=700&q=80" alt="Citoyens" />
+        <div class="card-body">
+          <h3>Les citoyens</h3>
+          <p>Nous valorisons leur rôle central. Ils peuvent donner du pouvoir à leur argent en finançant des projets porteurs de sens.</p>
+          <a href="projets.html" class="btn btn-outline">Découvrir les projets</a>
+        </div>
+      </article>
+      <article class="card reveal reveal-delay-2">
+        <img class="card-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=700&q=80" alt="Entreprises" />
+        <div class="card-body">
+          <h3>Les entreprises & institutions</h3>
+          <p>AgroLink imagine des dispositifs sur-mesure pour leur permettre d'incarner leurs engagements RSE.</p>
+          <a href="partenaires.html" class="btn btn-outline">Devenir partenaire</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECTION VALEURS -->
+  <section class="pad bg-vert">
+    <div class="reveal">
+      <p class="section-label" style="color:var(--vert-clair)">Nos valeurs</p>
+      <!-- ===== MODIFIER : titre valeurs ===== -->
+      <h2 class="section-title" style="color:var(--blanc)">Chez AgroLink, nous mettons la finance<br />au service de la transition agricole avec…</h2>
+    </div>
+    <div class="valeurs-grid" style="margin-top:48px;">
+      <!-- ===== MODIFIER : icone, titre, texte de chaque valeur ===== -->
+      <div class="valeur-item reveal"><div class="vi">🤝</div><h3>Respect</h3><p>Maître-mot de notre relation avec porteurs de projet, partenaires et membres, tous engagés dans notre mission.</p></div>
+      <div class="valeur-item reveal reveal-delay-1"><div class="vi">🔍</div><h3>Transparence</h3><p>Clé d'une relation de confiance durable pour bâtir ensemble un avenir agricole solide.</p></div>
+      <div class="valeur-item reveal reveal-delay-2"><div class="vi">🌱</div><h3>Résilience</h3><p>Nous nous engageons à 200% pour réussir notre mission de transition agroécologique.</p></div>
+      <div class="valeur-item reveal reveal-delay-3"><div class="vi">🧠</div><h3>Expertise</h3><p>Une équipe passionnée formée à la finance et aux enjeux agricoles et alimentaires régionaux.</p></div>
+    </div>
+  </section>
+
+  <!-- CITATION FONDATEUR -->
+  <section class="pad bg-beige2">
+    <div class="citation-wrap reveal">
+      <!-- ===== MODIFIER : photo fondateur (URL) ===== -->
+      <img class="fondateur-img" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="Fondateur AgroLink" />
+      <div>
+        <div class="guillemet">"</div>
+        <!-- ===== MODIFIER : texte de la citation ===== -->
+        <blockquote>
+          Fils de paysan, j'ai grandi entre les champs et les marchés locaux. J'ai toujours cru que l'agriculture
+          est l'acte le plus noble qui soit. En 2021, j'ai fondé AgroLink pour offrir aux agriculteurs les ressources
+          qu'ils méritent et aux citoyens la chance de participer à ce qui se trouve dans leur assiette matin, midi et soir.
+        </blockquote>
+        <!-- ===== MODIFIER : nom et titre du fondateur ===== -->
+        <p class="fond-nom">Karim BENALI</p>
+        <p class="fond-titre">Fondateur d'AgroLink</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION ENGAGEMENTS -->
+  <section class="eng-section">
+    <div class="eng-bg"></div>
+    <div class="eng-content reveal">
+      <!-- ===== MODIFIER : label, titre, texte, slogan, bouton ===== -->
+      <span class="section-label" style="color:var(--vert-clair);display:inline-block;margin-bottom:18px;">Nos engagements</span>
+      <h2>Nous croyons en l'humain<br />et en la solidarité.</h2>
+      <p>Nous développons le lien entre porteurs de projet, entreprises et citoyens. Convaincus que les grands projets se construisent à plusieurs, AgroLink est bien plus qu'une plateforme : c'est un écosystème.</p>
+      <a href="contact.html" class="btn btn-primary">Rejoindre l'aventure</a>
+      <p class="slogan">L'avenir est agricole. Cultivons-le.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="footer-brand"><div class="logo-footer">AgroLink</div><p>La plateforme de financement participatif dédiée à la transition agricole et alimentaire.</p></div>
+      <div class="footer-col"><h4>Soutenir</h4><a href="projets.html">Projets en don</a><a href="contact.html">Besoin d'aide ?</a></div>
+      <div class="footer-col"><h4>Investir</h4><a href="investir.html">Prêt rémunéré</a><a href="investir.html">Statistiques</a></div>
+      <div class="footer-col"><h4>AgroLink</h4><a href="manifeste.html">Notre manifeste</a><a href="partenaires.html">Partenaires</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Contact</h4><a href="tel:+212522000000">+212 5 22 00 00 00</a><a href="mailto:contact@agrolink.ma">contact@agrolink.ma</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>Fait avec ❤️ par AgroLink | Copyright © <span id="annee"></span></p>
+      <p class="copy">Investir présente un risque de perte en capital.</p>
+    </div>
+  </footer>
+  <button id="btn-top">↑</button>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ===== MODIFIER : titre onglet ===== -->
+  <title>AgroLink — Contact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── styles propres à la page Contact ── */
+
+    /* mise en page deux colonnes */
+    .contact-wrap { display:grid; grid-template-columns:1fr 1.4fr; gap:70px; align-items:start; }
+    @media(max-width:800px){ .contact-wrap{grid-template-columns:1fr;} }
+
+    /* infos de contact à gauche */
+    .contact-info-item { display:flex; gap:16px; margin-bottom:28px; }
+    .ci-icon { width:46px; height:46px; border-radius:50%; background:var(--vert-moyen); color:var(--blanc); display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; }
+    /* ===== MODIFIER : titre et texte des infos ===== -->
+    .ci-body h4 { font-weight:700; font-size:.95rem; color:var(--vert-fonce); margin-bottom:4px; }
+    .ci-body p  { font-size:.88rem; color:var(--texte-doux); line-height:1.6; }
+
+    /* carte carte de localisation */
+    .map-placeholder {
+      width:100%; height:260px; border-radius:var(--rayon);
+      background:var(--beige-fonce); display:flex; align-items:center; justify-content:center;
+      margin-top:36px; overflow:hidden;
+    }
+    .map-placeholder iframe { width:100%; height:100%; border:none; border-radius:var(--rayon); }
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+
+  <!-- NAVBAR -->
+  <header id="navbar">
+    <a href="index.html" class="logo">AgroLink</a>
+    <div id="menu-toggle"><span></span><span></span><span></span></div>
+    <nav id="main-nav">
+      <a href="index.html">Accueil</a>
+      <a href="manifeste.html">Manifeste</a>
+      <a href="projets.html">Projets</a>
+      <a href="investir.html">Investir</a>
+      <a href="partenaires.html">Partenaires</a>
+      <a href="contact.html">Contact</a>
+      <a href="projets.html" class="btn-nav">Découvrir les projets</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero" style="height:52vh;min-height:340px;">
+    <div class="hero-bg" style="background:
+      linear-gradient(to top,rgba(26,60,43,.78) 40%,transparent 80%),
+      url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1600&q=80') center/cover;"></div>
+    <div class="hero-content">
+      <!-- ===== MODIFIER : label, titre, sous-titre ===== -->
+      <span class="hero-label">Parlons-nous</span>
+      <h1>Contactez<br />l'équipe AgroLink.</h1>
+      <p class="hero-sub">Une question, un projet, un partenariat ? Notre équipe vous répond dans les 24 heures.</p>
+    </div>
+  </section>
+
+  <!-- SECTION PRINCIPALE : formulaire + infos -->
+  <section class="pad bg-blanc">
+    <div class="contact-wrap">
+
+      <!-- ── COLONNE GAUCHE : infos de contact ── -->
+      <div class="reveal">
+        <p class="section-label">Nos coordonnées</p>
+        <!-- ===== MODIFIER : titre ===== -->
+        <h2 class="section-title">Nous sommes là pour vous.</h2>
+        <div class="sep"></div>
+
+        <!-- ===== MODIFIER : adresse ===== -->
+        <div class="contact-info-item">
+          <div class="ci-icon">📍</div>
+          <div class="ci-body">
+            <h4>Adresse</h4>
+            <p>123, Boulevard Mohammed V<br />20000 Casablanca, Maroc</p>
+          </div>
+        </div>
+
+        <!-- ===== MODIFIER : téléphone ===== -->
+        <div class="contact-info-item">
+          <div class="ci-icon">📞</div>
+          <div class="ci-body">
+            <h4>Téléphone</h4>
+            <p><a href="tel:+212522000000" style="color:var(--vert-moyen);font-weight:600;">+212 5 22 00 00 00</a><br />Lun – Ven, 9h – 18h</p>
+          </div>
+        </div>
+
+        <!-- ===== MODIFIER : email ===== -->
+        <div class="contact-info-item">
+          <div class="ci-icon">✉️</div>
+          <div class="ci-body">
+            <h4>Email</h4>
+            <p><a href="mailto:contact@agrolink.ma" style="color:var(--vert-moyen);font-weight:600;">contact@agrolink.ma</a><br />Réponse sous 24h</p>
+          </div>
+        </div>
+
+        <!-- ===== MODIFIER : réseaux sociaux ===== -->
+        <div class="contact-info-item">
+          <div class="ci-icon">🌐</div>
+          <div class="ci-body">
+            <h4>Réseaux sociaux</h4>
+            <p>
+              <a href="#" style="color:var(--vert-moyen);font-weight:600;">LinkedIn</a> · 
+              <a href="#" style="color:var(--vert-moyen);font-weight:600;">Instagram</a> · 
+              <a href="#" style="color:var(--vert-moyen);font-weight:600;">Facebook</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- carte Google Maps intégrée (iframe) -->
+        <div class="map-placeholder">
+          <!-- ===== MODIFIER : remplacer l'URL src par votre adresse ===== -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.5!2d-7.6189!3d33.5731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBoulevard+Mohammed+V%2C+Casablanca!5e0!3m2!1sfr!2sma!4v1700000000000"
+            allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- ── COLONNE DROITE : formulaire de contact ── -->
+      <div class="reveal reveal-delay-1">
+        <p class="section-label">Formulaire</p>
+        <!-- ===== MODIFIER : titre formulaire ===== -->
+        <h2 class="section-title">Envoyez-nous un message.</h2>
+        <div class="sep"></div>
+
+        <form id="contact-form">
+
+          <!-- ===== MODIFIER : labels et placeholders ===== -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prenom">Prénom *</label>
+              <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required />
+            </div>
+            <div class="form-group">
+              <label for="nom">Nom *</label>
+              <input type="text" id="nom" name="nom" placeholder="Votre nom" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="telephone">Téléphone</label>
+            <input type="tel" id="telephone" name="telephone" placeholder="+212 6 XX XX XX XX" />
+          </div>
+
+          <!-- ===== MODIFIER : options du menu déroulant ===== -->
+          <div class="form-group">
+            <label for="sujet">Sujet *</label>
+            <select id="sujet" name="sujet" required>
+              <option value="">-- Choisissez un sujet --</option>
+              <option value="porteur">J'ai un projet à financer</option>
+              <option value="investisseur">Je souhaite investir</option>
+              <option value="partenariat">Demande de partenariat</option>
+              <option value="presse">Demande presse / médias</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+
+          <!-- ===== MODIFIER : label et placeholder du message ===== -->
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" placeholder="Décrivez votre demande ou votre projet…" required></textarea>
+          </div>
+
+          <!-- ===== MODIFIER : texte du bouton d'envoi ===== -->
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+            Envoyer mon message ✉️
+          </button>
+
+        </form>
+
+        <!-- message de succès après envoi (caché par défaut) -->
+        <div id="form-success" class="form-success">
+          <!-- ===== MODIFIER : message de confirmation ===== -->
+          ✅ Merci ! Votre message a bien été envoyé. Nous vous répondrons sous 24 heures.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION FAQ RAPIDE -->
+  <section class="pad bg-beige">
+    <div class="reveal">
+      <p class="section-label">Aide rapide</p>
+      <!-- ===== MODIFIER : titre ===== -->
+      <h2 class="section-title">Questions fréquentes.</h2>
+      <div class="sep"></div>
+    </div>
+    <div style="max-width:720px;margin:0 auto;">
+      <!-- ===== MODIFIER : questions et réponses FAQ ===== -->
+      <div class="faq-item reveal">
+        <div class="faq-question">Comment soumettre mon projet agricole ? <span class="arrow">▾</span></div>
+        <div class="faq-answer">Remplissez le formulaire ci-dessus en choisissant "J'ai un projet à financer". Notre équipe vous contactera dans les 48h pour évaluer votre dossier.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">Combien de temps dure l'analyse de mon dossier ? <span class="arrow">▾</span></div>
+        <div class="faq-answer">L'analyse prend généralement 5 à 10 jours ouvrables. Si votre dossier est retenu, nous vous proposons un entretien téléphonique pour affiner les détails.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">Est-ce qu'AgroLink prend des commissions ? <span class="arrow">▾</span></div>
+        <div class="faq-answer">AgroLink perçoit une commission sur les fonds collectés (entre 5 et 8% selon le type de financement). Cette commission est clairement indiquée avant la publication du projet.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">Comment devenir partenaire institutionnel ? <span class="arrow">▾</span></div>
+        <div class="faq-answer">Sélectionnez "Demande de partenariat" dans le formulaire ou consultez notre page <a href="partenaires.html" style="color:var(--vert-moyen);font-weight:600;">Partenaires</a> pour plus d'informations.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="footer-brand"><div class="logo-footer">AgroLink</div><p>La plateforme de financement participatif dédiée à la transition agricole et alimentaire.</p></div>
+      <div class="footer-col"><h4>Soutenir</h4><a href="projets.html">Projets en don</a><a href="contact.html">Besoin d'aide ?</a></div>
+      <div class="footer-col"><h4>Investir</h4><a href="investir.html">Prêt rémunéré</a><a href="investir.html">Statistiques</a></div>
+      <div class="footer-col"><h4>AgroLink</h4><a href="manifeste.html">Notre manifeste</a><a href="partenaires.html">Partenaires</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Contact</h4><a href="tel:+212522000000">+212 5 22 00 00 00</a><a href="mailto:contact@agrolink.ma">contact@agrolink.ma</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>Fait avec ❤️ par AgroLink | Copyright © <span id="annee"></span></p>
+      <p class="copy">Investir présente un risque de perte en capital.</p>
+    </div>
+  </footer>
+  <button id="btn-top">↑</button>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

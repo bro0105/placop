@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ===== MODIFIER : titre onglet ===== -->
+  <title>AgroLink — Les Projets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── styles propres à la page Projets ── */
+
+    /* barre de filtres */
+    .filters {
+      display:flex; gap:12px; flex-wrap:wrap; margin-bottom:44px;
+    }
+    .filter-btn {
+      padding:9px 22px; border-radius:50px; border:2px solid var(--beige-fonce);
+      background:var(--blanc); font-family:var(--font-corps); font-size:.88rem;
+      font-weight:600; cursor:pointer; color:var(--texte-doux); transition:.2s;
+    }
+    /* ===== MODIFIER : libellés des filtres ===== */
+    .filter-btn:hover, .filter-btn.active { background:var(--vert-moyen); color:var(--blanc); border-color:var(--vert-moyen); }
+
+    /* progression de financement dans une carte */
+    .progress-wrap { margin:14px 0 8px; }
+    .progress-bar-inner { height:6px; background:var(--beige-fonce); border-radius:4px; overflow:hidden; }
+    .progress-fill { height:100%; border-radius:4px; background:var(--vert-clair); transition:width 1s ease; }
+    .progress-info { display:flex; justify-content:space-between; font-size:.78rem; color:var(--texte-doux); margin-top:6px; }
+    /* ===== MODIFIER : texte % et jours restants ===== */
+    .progress-info strong { color:var(--vert-moyen); }
+
+    /* carte étendue avec extra infos */
+    .card-meta { display:flex; gap:14px; font-size:.78rem; color:var(--texte-doux); margin-bottom:10px; }
+    .card-meta span { display:flex; align-items:center; gap:4px; }
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+
+  <!-- NAVBAR -->
+  <header id="navbar">
+    <a href="index.html" class="logo">AgroLink</a>
+    <div id="menu-toggle"><span></span><span></span><span></span></div>
+    <nav id="main-nav">
+      <a href="index.html">Accueil</a>
+      <a href="manifeste.html">Manifeste</a>
+      <a href="projets.html">Projets</a>
+      <a href="investir.html">Investir</a>
+      <a href="partenaires.html">Partenaires</a>
+      <a href="contact.html">Contact</a>
+      <a href="projets.html" class="btn-nav">Découvrir les projets</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero" style="height:60vh;min-height:380px;">
+    <div class="hero-bg" style="background:
+      linear-gradient(to top,rgba(26,60,43,.75) 40%,transparent 80%),
+      url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1600&q=80') center/cover;"></div>
+    <div class="hero-content">
+      <!-- ===== MODIFIER : label, titre, sous-titre ===== -->
+      <span class="hero-label">Financement participatif</span>
+      <h1>Tous les projets<br />agricoles</h1>
+      <p class="hero-sub">Soutenez ou investissez dans des projets à impact positif vérifiés par notre équipe.</p>
+    </div>
+  </section>
+
+  <!-- LISTE DES PROJETS -->
+  <section class="pad bg-beige">
+    <!-- ===== MODIFIER : libellés des filtres ===== -->
+    <div class="filters reveal">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="bio">🌿 Bio</button>
+      <button class="filter-btn" data-filter="elevage">🐄 Élevage</button>
+      <button class="filter-btn" data-filter="miel">🍯 Apiculture</button>
+      <button class="filter-btn" data-filter="energie">⚡ Énergie</button>
+    </div>
+
+    <div class="cards-grid" id="projets-grid">
+
+      <!-- ===== PROJET 1 — MODIFIER : toutes les infos ===== -->
+      <article class="card reveal" data-category="bio">
+        <img class="card-img" src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=700&q=80" alt="Maraîchage bio" />
+        <div class="card-body">
+          <span class="card-tag">🥕 Maraîchage bio</span>
+          <div class="card-meta">
+            <!-- ===== MODIFIER : localisation et type ===== -->
+            <span>📍 Meknès</span>
+            <span>🎁 Don avec contrepartie</span>
+          </div>
+          <!-- ===== MODIFIER : titre du projet ===== -->
+          <h3>La Ferme des Quatre Saisons</h3>
+          <!-- ===== MODIFIER : description du projet ===== -->
+          <p>Développer 2 hectares de légumes biologiques avec un système d'irrigation solaire innovant.</p>
+          <!-- barre de progression — changer width et textes -->
+          <div class="progress-wrap">
+            <div class="progress-bar-inner"><div class="progress-fill" style="width:74%"></div></div>
+            <div class="progress-info"><span><strong>74%</strong> financé</span><span>12 jours restants</span></div>
+          </div>
+          <a href="#" class="btn btn-primary">Soutenir ce projet</a>
+        </div>
+      </article>
+
+      <!-- ===== PROJET 2 ===== -->
+      <article class="card reveal reveal-delay-1" data-category="miel">
+        <img class="card-img" src="https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?w=700&q=80" alt="Apiculture" />
+        <div class="card-body">
+          <span class="card-tag">🍯 Apiculture</span>
+          <div class="card-meta"><span>📍 Ifrane</span><span>💰 Prêt rémunéré</span></div>
+          <h3>Ruchers du Moyen Atlas</h3>
+          <p>Installer 80 ruches dans les forêts de cèdres pour produire un miel labellisé et exporter.</p>
+          <div class="progress-wrap">
+            <div class="progress-bar-inner"><div class="progress-fill" style="width:58%"></div></div>
+            <div class="progress-info"><span><strong>58%</strong> financé</span><span>21 jours restants</span></div>
+          </div>
+          <a href="#" class="btn btn-primary">Investir en prêt</a>
+        </div>
+      </article>
+
+      <!-- ===== PROJET 3 ===== -->
+      <article class="card reveal reveal-delay-2" data-category="elevage">
+        <img class="card-img" src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=700&q=80" alt="Élevage" />
+        <div class="card-body">
+          <span class="card-tag">🐄 Élevage raisonné</span>
+          <div class="card-meta"><span>📍 Souss-Massa</span><span>💰 Prêt rémunéré</span></div>
+          <h3>Laiterie Coopérative Souss</h3>
+          <p>Créer une mini-laiterie coopérative pour 12 familles d'éleveurs de la région Souss.</p>
+          <div class="progress-wrap">
+            <div class="progress-bar-inner"><div class="progress-fill" style="width:91%"></div></div>
+            <div class="progress-info"><span><strong>91%</strong> financé</span><span>5 jours restants</span></div>
+          </div>
+          <a href="#" class="btn btn-primary">Investir en prêt</a>
+        </div>
+      </article>
+
+      <!-- ===== PROJET 4 ===== -->
+      <article class="card reveal" data-category="energie">
+        <img class="card-img" src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=700&q=80" alt="Énergie solaire" />
+        <div class="card-body">
+          <span class="card-tag">⚡ Énergie agricole</span>
+          <div class="card-meta"><span>📍 Ouarzazate</span><span>💰 Prêt rémunéré</span></div>
+          <h3>Séchoirs Solaires Drâa</h3>
+          <p>Équiper 30 exploitations en séchoirs solaires pour valoriser dattes et figues localement.</p>
+          <div class="progress-wrap">
+            <div class="progress-bar-inner"><div class="progress-fill" style="width:43%"></div></div>
+            <div class="progress-info"><span><strong>43%</strong> financé</span><span>38 jours restants</span></div>
+          </div>
+          <a href="#" class="btn btn-primary">Investir en prêt</a>
+        </div>
+      </article>
+
+      <!-- ===== PROJET 5 ===== -->
+      <article class="card reveal reveal-delay-1" data-category="bio">
+        <img class="card-img" src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?w=700&q=80" alt="Arganier" />
+        <div class="card-body">
+          <span class="card-tag">🌿 Agroforesterie</span>
+          <div class="card-meta"><span>📍 Essaouira</span><span>🎁 Don avec contrepartie</span></div>
+          <h3>Verger d'Arganiers Durables</h3>
+          <p>Planter 5 000 arganiers pour produire de l'huile d'argan bio et restaurer les forêts.</p>
+          <div class="progress-wrap">
+            <div class="progress-bar-inner"><div class="progress-fill" style="width:66%"></div></div>
+            <div class="progress-info"><span><strong>66%</strong> financé</span><span>17 jours restants</span></div>
+          </div>
+          <a href="#" class="btn btn-primary">Soutenir ce projet</a>
+        </div>
+      </article>
+
+      <!-- ===== PROJET 6 ===== -->
+      <article class="card reveal reveal-delay-2" data-category="elevage">
+        <img class="card-img" src="https://images.unsplash.com/photo-1543257580-7269da773bf5?w=700&q=80" alt="Volaille" />
+        <div class="card-body">
+          <span class="card-tag">🐔 Aviculture</span>
+          <div class="card-meta"><span>📍 Fès-Meknès</span><span>💰 Prêt rémunéré</span></div>
+          <h3>Poulailler Plein Air Atlas</h3>
+          <p>Construire un élevage de 2 000 poulets en plein air avec alimentation locale certifiée.</p>
+          <div class="progress-wrap">
+            <div class="progress-bar-inner"><div class="progress-fill" style="width:32%"></div></div>
+            <div class="progress-info"><span><strong>32%</strong> financé</span><span>44 jours restants</span></div>
+          </div>
+          <a href="#" class="btn btn-primary">Investir en prêt</a>
+        </div>
+      </article>
+
+    </div><!-- /projets-grid -->
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="footer-brand"><div class="logo-footer">AgroLink</div><p>La plateforme de financement participatif dédiée à la transition agricole et alimentaire.</p></div>
+      <div class="footer-col"><h4>Soutenir</h4><a href="projets.html">Projets en don</a><a href="contact.html">Besoin d'aide ?</a></div>
+      <div class="footer-col"><h4>Investir</h4><a href="investir.html">Prêt rémunéré</a><a href="investir.html">Statistiques</a></div>
+      <div class="footer-col"><h4>AgroLink</h4><a href="manifeste.html">Notre manifeste</a><a href="partenaires.html">Partenaires</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Contact</h4><a href="tel:+212522000000">+212 5 22 00 00 00</a><a href="mailto:contact@agrolink.ma">contact@agrolink.ma</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>Fait avec ❤️ par AgroLink | Copyright © <span id="annee"></span></p>
+      <p class="copy">Investir présente un risque de perte en capital.</p>
+    </div>
+  </footer>
+  <button id="btn-top">↑</button>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="main.js"></script>
+  <script>
+    // ─── Filtres de projets ──────────────────────────────────
+    // Au clic sur un filtre, affiche seulement les cartes correspondantes
+    $('.filter-btn').on('click', function () {
+      var filter = $(this).data('filter'); // ex: "bio", "elevage", "all"
+
+      // active visuellement le bouton cliqué
+      $('.filter-btn').removeClass('active');
+      $(this).addClass('active');
+
+      if (filter === 'all') {
+        // affiche toutes les cartes
+        $('#projets-grid .card').fadeIn(300);
+      } else {
+        // cache les cartes qui ne correspondent pas
+        $('#projets-grid .card').each(function () {
+          if ($(this).data('category') === filter) {
+            $(this).fadeIn(300);
+          } else {
+            $(this).fadeOut(200);
+          }
+        });
+      }
+    });
+
+    // ─── Animation des barres de progression ────────────────
+    // Déclenche au premier scroll visible
+    var barsAnimated = false;
+    $(window).on('scroll', function () {
+      if (barsAnimated) return;
+      var top = $('#projets-grid').offset().top;
+      if ($(window).scrollTop() + $(window).height() > top + 100) {
+        barsAnimated = true;
+        // chaque barre est déjà à sa valeur finale en CSS, pas besoin de JS
+      }
+    });
+  </script>
+</body>
+</html>

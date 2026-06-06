@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ===== MODIFIER : titre onglet ===== -->
+  <title>AgroLink — Investir en Prêt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── styles propres à la page Investir ── */
+
+    /* grille avantages */
+    .avantages { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:24px; margin-top:12px; }
+    .avantage  { background:var(--blanc); border-radius:var(--rayon); padding:32px 26px; box-shadow:var(--ombre); border-top:4px solid var(--vert-clair); }
+    /* ===== MODIFIER : icone, titre, texte des avantages ===== */
+    .avantage .av-icon { font-size:2.2rem; margin-bottom:16px; }
+    .avantage h3 { font-family:var(--font-titre); font-size:1.2rem; font-weight:700; color:var(--vert-fonce); margin-bottom:10px; }
+    .avantage p  { font-size:.9rem; color:var(--texte-doux); line-height:1.65; }
+
+    /* simulateur d'intérêts */
+    .simulateur {
+      background:var(--blanc); border-radius:var(--rayon); padding:44px; box-shadow:var(--ombre); max-width:600px;
+    }
+    /* ===== MODIFIER : label et valeur du simulateur ===== */
+    .sim-label { font-size:.85rem; font-weight:600; color:var(--texte-doux); margin-bottom:8px; display:flex; justify-content:space-between; }
+    .sim-label span { color:var(--vert-moyen); font-size:1rem; font-weight:700; }
+    input[type=range] { width:100%; accent-color:var(--vert-moyen); margin-bottom:24px; }
+    .sim-result {
+      padding:20px 24px; background:var(--beige); border-radius:8px; text-align:center; margin-top:8px;
+    }
+    .sim-result .res-num { font-family:var(--font-titre); font-size:2.4rem; font-weight:900; color:var(--vert-moyen); }
+    .sim-result .res-label { font-size:.85rem; color:var(--texte-doux); margin-top:4px; }
+
+    /* timeline étapes */
+    .steps-invest { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:0; }
+    .step-invest  { padding:36px 28px; border-right:1px solid var(--beige-fonce); position:relative; }
+    .step-invest:last-child { border-right:none; }
+    .step-invest .num { font-family:var(--font-titre); font-size:3rem; font-weight:900; color:var(--beige-fonce); line-height:1; margin-bottom:14px; }
+    /* ===== MODIFIER : titre et texte de chaque étape ===== */
+    .step-invest h4 { font-family:var(--font-titre); font-size:1.1rem; font-weight:700; color:var(--vert-fonce); margin-bottom:8px; }
+    .step-invest p  { font-size:.88rem; color:var(--texte-doux); }
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+
+  <!-- NAVBAR -->
+  <header id="navbar">
+    <a href="index.html" class="logo">AgroLink</a>
+    <div id="menu-toggle"><span></span><span></span><span></span></div>
+    <nav id="main-nav">
+      <a href="index.html">Accueil</a>
+      <a href="manifeste.html">Manifeste</a>
+      <a href="projets.html">Projets</a>
+      <a href="investir.html">Investir</a>
+      <a href="partenaires.html">Partenaires</a>
+      <a href="contact.html">Contact</a>
+      <a href="projets.html" class="btn-nav">Découvrir les projets</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero" style="height:65vh;min-height:400px;">
+    <div class="hero-bg" style="background:
+      linear-gradient(to top,rgba(26,60,43,.78) 35%,transparent 80%),
+      url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1600&q=80') center/cover;"></div>
+    <div class="hero-content">
+      <!-- ===== MODIFIER : label, titre, sous-titre ===== -->
+      <span class="hero-label">Investissement responsable</span>
+      <h1>Investissez en prêt<br />dans l'agriculture<br />de demain.</h1>
+      <p class="hero-sub">Percevez jusqu'à 10 % d'intérêts par an tout en soutenant des projets agricoles à impact positif.</p>
+      <a href="projets.html" class="btn btn-primary" style="margin-top:28px;">Voir les projets de prêt</a>
+    </div>
+  </section>
+
+  <!-- AVANTAGES -->
+  <section class="pad bg-blanc">
+    <div class="reveal">
+      <p class="section-label">Pourquoi investir avec AgroLink</p>
+      <!-- ===== MODIFIER : titre section ===== -->
+      <h2 class="section-title">Un investissement qui a du sens.</h2>
+      <div class="sep"></div>
+    </div>
+    <div class="avantages">
+      <!-- ===== MODIFIER : avantages ===== -->
+      <div class="avantage reveal">
+        <div class="av-icon">📈</div>
+        <h3>Jusqu'à 10% d'intérêts/an</h3>
+        <p>Des rendements attractifs sur des durées de 12 à 60 mois, avec remboursements mensuels.</p>
+      </div>
+      <div class="avantage reveal reveal-delay-1">
+        <div class="av-icon">🌿</div>
+        <h3>Impact positif concret</h3>
+        <p>Chaque euro investi finance un projet agricole vérifié et contribue à la transition agroécologique.</p>
+      </div>
+      <div class="avantage reveal reveal-delay-2">
+        <div class="av-icon">🔒</div>
+        <h3>Plateforme agréée</h3>
+        <p>AgroLink est agréée sous le N° FP-2025-01. Vos investissements sont encadrés par la réglementation.</p>
+      </div>
+      <div class="avantage reveal reveal-delay-3">
+        <div class="av-icon">💳</div>
+        <h3>Dès 20 € seulement</h3>
+        <p>Investissez le montant qui vous convient et diversifiez sur plusieurs projets facilement.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMULATEUR -->
+  <section class="pad bg-beige" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+    <div class="reveal">
+      <p class="section-label">Outil de simulation</p>
+      <!-- ===== MODIFIER : titre et texte simulateur ===== -->
+      <h2 class="section-title">Calculez vos intérêts potentiels.</h2>
+      <div class="sep"></div>
+      <p style="color:var(--texte-doux);font-size:.95rem;line-height:1.7;">
+        Ce simulateur est fourni à titre indicatif. Les rendements réels dépendent du projet choisi,
+        de sa durée et de la santé financière du porteur. Investir présente un risque de perte en capital.
+      </p>
+    </div>
+    <div class="simulateur reveal reveal-delay-1">
+      <!-- ===== MODIFIER : labels du simulateur ===== -->
+      <div class="sim-label">Montant investi <span id="montant-val">500 €</span></div>
+      <input type="range" id="montant" min="20" max="10000" step="20" value="500" />
+
+      <div class="sim-label">Taux d'intérêt <span id="taux-val">6 %</span></div>
+      <input type="range" id="taux" min="2" max="10" step="0.5" value="6" />
+
+      <div class="sim-label">Durée <span id="duree-val">24 mois</span></div>
+      <input type="range" id="duree" min="6" max="60" step="6" value="24" />
+
+      <div class="sim-result">
+        <!-- résultat calculé en JS -->
+        <div class="res-num" id="resultat">60 €</div>
+        <div class="res-label">intérêts perçus estimés</div>
+      </div>
+    </div>
+
+    <script>
+      // ─── Simulateur d'intérêts en temps réel ────────────────
+      function calcSimu () {
+        var m = parseFloat($('#montant').val());
+        var t = parseFloat($('#taux').val()) / 100;
+        var d = parseFloat($('#duree').val()) / 12; // en années
+        var interets = Math.round(m * t * d);
+
+        // met à jour les labels affichés
+        $('#montant-val').text(m + ' €');
+        $('#taux-val').text($('#taux').val() + ' %');
+        $('#duree-val').text($('#duree').val() + ' mois');
+        $('#resultat').text(interets + ' €');
+      }
+
+      // recalcule à chaque mouvement de curseur
+      $('#montant, #taux, #duree').on('input', calcSimu);
+      calcSimu(); // calcul initial au chargement
+    </script>
+  </section>
+
+  <!-- ÉTAPES POUR INVESTIR -->
+  <section class="pad bg-blanc">
+    <div class="reveal">
+      <p class="section-label">Processus</p>
+      <!-- ===== MODIFIER : titre ===== -->
+      <h2 class="section-title">Comment investir en 4 étapes ?</h2>
+      <div class="sep"></div>
+    </div>
+    <div class="steps-invest reveal">
+      <!-- ===== MODIFIER : titre et texte de chaque étape ===== -->
+      <div class="step-invest">
+        <div class="num">01</div>
+        <h4>Créez votre compte</h4>
+        <p>Inscription rapide et vérification d'identité en 5 minutes.</p>
+      </div>
+      <div class="step-invest">
+        <div class="num">02</div>
+        <h4>Choisissez un projet</h4>
+        <p>Parcourez et sélectionnez un projet selon le rendement et la durée.</p>
+      </div>
+      <div class="step-invest">
+        <div class="num">03</div>
+        <h4>Investissez</h4>
+        <p>Validez votre investissement en ligne, dès 20 €, de façon sécurisée.</p>
+      </div>
+      <div class="step-invest">
+        <div class="num">04</div>
+        <h4>Percevez vos intérêts</h4>
+        <p>Recevez vos remboursements mensuels directement sur votre compte.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="pad bg-beige2">
+    <div class="reveal">
+      <p class="section-label">Questions fréquentes</p>
+      <!-- ===== MODIFIER : titre FAQ ===== -->
+      <h2 class="section-title">Vos questions sur l'investissement.</h2>
+      <div class="sep"></div>
+    </div>
+    <div style="max-width:760px;">
+      <!-- ===== MODIFIER : questions et réponses ===== -->
+      <div class="faq-item reveal">
+        <div class="faq-question">Quel est le risque de perdre mon argent ? <span class="arrow">▾</span></div>
+        <div class="faq-answer">Investir en prêt présente un risque de perte en capital si le porteur ne rembourse pas. AgroLink évalue soigneusement chaque porteur, mais nous recommandons de diversifier vos investissements sur plusieurs projets.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">Quand reçois-je mes remboursements ? <span class="arrow">▾</span></div>
+        <div class="faq-answer">Les remboursements sont mensuels et démarrent dès le premier mois suivant la clôture de la collecte. Vous les recevez directement sur votre compte bancaire.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">Puis-je investir depuis l'étranger ? <span class="arrow">▾</span></div>
+        <div class="faq-answer">Oui, sous réserve des réglementations de votre pays de résidence. Contactez-nous pour vérifier votre éligibilité avant d'investir.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">Comment la fiscalité fonctionne-t-elle ? <span class="arrow">▾</span></div>
+        <div class="faq-answer">Les intérêts perçus sont soumis à l'impôt sur le revenu selon votre pays de résidence. Nous vous transmettons une attestation fiscale chaque année.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="footer-brand"><div class="logo-footer">AgroLink</div><p>La plateforme de financement participatif dédiée à la transition agricole et alimentaire.</p></div>
+      <div class="footer-col"><h4>Soutenir</h4><a href="projets.html">Projets en don</a><a href="contact.html">Besoin d'aide ?</a></div>
+      <div class="footer-col"><h4>Investir</h4><a href="investir.html">Prêt rémunéré</a><a href="investir.html">Statistiques</a></div>
+      <div class="footer-col"><h4>AgroLink</h4><a href="manifeste.html">Notre manifeste</a><a href="partenaires.html">Partenaires</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Contact</h4><a href="tel:+212522000000">+212 5 22 00 00 00</a><a href="mailto:contact@agrolink.ma">contact@agrolink.ma</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>Fait avec ❤️ par AgroLink | Copyright © <span id="annee"></span></p>
+      <p class="copy">Investir présente un risque de perte en capital.</p>
+    </div>
+  </footer>
+  <button id="btn-top">↑</button>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

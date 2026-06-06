@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ===== MODIFIER : titre onglet ===== -->
+  <title>AgroLink — Partenaires</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── styles propres à la page Partenaires ── */
+
+    /* types de partenariats */
+    .partenariat-types { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:28px; }
+    .part-type {
+      padding:38px 30px; background:var(--blanc); border-radius:var(--rayon);
+      box-shadow:var(--ombre); border-bottom:4px solid var(--vert-clair);
+      transition:transform .3s;
+    }
+    .part-type:hover { transform:translateY(-5px); }
+    /* ===== MODIFIER : icone, titre, texte des types ===== */
+    .part-type .pt-icon { font-size:2.5rem; margin-bottom:18px; }
+    .part-type h3 { font-family:var(--font-titre); font-size:1.3rem; font-weight:700; color:var(--vert-fonce); margin-bottom:12px; }
+    .part-type p  { font-size:.9rem; color:var(--texte-doux); line-height:1.65; }
+
+    /* logos partenaires */
+    .logos-grid {
+      display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:20px;
+    }
+    .logo-item {
+      background:var(--blanc); border-radius:var(--rayon); padding:28px 20px;
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:var(--ombre); text-align:center;
+    }
+    /* ===== MODIFIER : nom des partenaires ===== */
+    .logo-item span { font-weight:700; font-size:.9rem; color:var(--texte-doux); letter-spacing:.5px; }
+
+    /* processus partenariat */
+    .process { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:28px; }
+    .proc-step { text-align:center; padding:28px 18px; }
+    .proc-num { width:50px; height:50px; border-radius:50%; border:3px solid var(--vert-clair); color:var(--vert-moyen); font-family:var(--font-titre); font-size:1.3rem; font-weight:900; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; }
+    /* ===== MODIFIER : titre et texte de chaque étape ===== -->
+    .proc-step h4 { font-family:var(--font-titre); font-size:1.05rem; font-weight:700; color:var(--vert-fonce); margin-bottom:8px; }
+    .proc-step p  { font-size:.88rem; color:var(--texte-doux); }
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+
+  <!-- NAVBAR -->
+  <header id="navbar">
+    <a href="index.html" class="logo">AgroLink</a>
+    <div id="menu-toggle"><span></span><span></span><span></span></div>
+    <nav id="main-nav">
+      <a href="index.html">Accueil</a>
+      <a href="manifeste.html">Manifeste</a>
+      <a href="projets.html">Projets</a>
+      <a href="investir.html">Investir</a>
+      <a href="partenaires.html">Partenaires</a>
+      <a href="contact.html">Contact</a>
+      <a href="projets.html" class="btn-nav">Découvrir les projets</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero" style="height:62vh;min-height:380px;">
+    <div class="hero-bg" style="background:
+      linear-gradient(to top,rgba(26,60,43,.75) 35%,transparent 80%),
+      url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1600&q=80') center/cover;"></div>
+    <div class="hero-content">
+      <!-- ===== MODIFIER : label, titre, sous-titre ===== -->
+      <span class="hero-label">Partenariats</span>
+      <h1>Ensemble, accélérons<br />la transition agricole.</h1>
+      <p class="hero-sub">AgroLink conçoit des dispositifs sur-mesure pour les entreprises, fondations et institutions souhaitant incarner leurs engagements.</p>
+      <a href="contact.html" class="btn btn-primary" style="margin-top:28px;">Devenir partenaire</a>
+    </div>
+  </section>
+
+  <!-- TYPES DE PARTENARIAT -->
+  <section class="pad bg-blanc">
+    <div class="reveal">
+      <p class="section-label">Nos offres</p>
+      <!-- ===== MODIFIER : titre ===== -->
+      <h2 class="section-title">Trois façons de s'engager.</h2>
+      <div class="sep"></div>
+    </div>
+    <div class="partenariat-types">
+      <!-- ===== MODIFIER : chaque type de partenariat ===== -->
+      <div class="part-type reveal">
+        <div class="pt-icon">🏢</div>
+        <h3>Partenariat RSE</h3>
+        <p>Engagez vos collaborateurs et incarnez vos engagements environnementaux en co-finançant des projets agricoles triés sur le volet.</p>
+      </div>
+      <div class="part-type reveal reveal-delay-1">
+        <div class="pt-icon">🏦</div>
+        <h3>Partenariat Institutionnel</h3>
+        <p>Fonds publics, coopératives, collectivités : concevons ensemble des programmes d'accompagnement à grande échelle.</p>
+      </div>
+      <div class="part-type reveal reveal-delay-2">
+        <div class="pt-icon">🎓</div>
+        <h3>Partenariat Académique</h3>
+        <p>Universités, écoles agronomiques et centres de recherche : collaborons pour mesurer et maximiser l'impact de la transition.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTENAIRES ACTUELS -->
+  <section class="pad bg-beige">
+    <div class="reveal">
+      <p class="section-label">Ils nous font confiance</p>
+      <!-- ===== MODIFIER : titre ===== -->
+      <h2 class="section-title">Nos partenaires actuels.</h2>
+      <div class="sep"></div>
+    </div>
+    <div class="logos-grid">
+      <!-- ===== MODIFIER : nom de chaque partenaire ===== -->
+      <div class="logo-item reveal"><span>CRÉDIT AGRICOLE DU MAROC</span></div>
+      <div class="logo-item reveal reveal-delay-1"><span>OCP GROUP</span></div>
+      <div class="logo-item reveal reveal-delay-2"><span>FONDATION ATTIJARIWAFA</span></div>
+      <div class="logo-item reveal"><span>IAV HASSAN II</span></div>
+      <div class="logo-item reveal reveal-delay-1"><span>MINISTÈRE DE L'AGRICULTURE</span></div>
+      <div class="logo-item reveal reveal-delay-2"><span>ONCA MAROC</span></div>
+      <div class="logo-item reveal"><span>GIZ MAROC</span></div>
+      <div class="logo-item reveal reveal-delay-1"><span>LABEL VIE</span></div>
+    </div>
+  </section>
+
+  <!-- TIMELINE — HISTOIRE DES PARTENARIATS -->
+  <section class="pad bg-beige2">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+      <div class="reveal">
+        <p class="section-label">Notre histoire</p>
+        <!-- ===== MODIFIER : titre ===== -->
+        <h2 class="section-title">Des partenariats qui grandissent.</h2>
+        <div class="sep"></div>
+        <p style="color:var(--texte-doux);font-size:.95rem;line-height:1.7;">
+          Depuis notre création en 2021, nous avons noué des collaborations avec des acteurs majeurs
+          de l'agriculture et de la finance au Maroc et en Afrique du Nord.
+        </p>
+      </div>
+      <div class="timeline reveal">
+        <!-- ===== MODIFIER : année, titre, texte de chaque étape timeline ===== -->
+        <div class="timeline-item">
+          <div class="tl-year">2021</div>
+          <h4>Fondation d'AgroLink</h4>
+          <p>Lancement de la plateforme avec le soutien de Crédit Agricole du Maroc.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-year">2022</div>
+          <h4>Premier partenariat institutionnel</h4>
+          <p>Signature d'une convention avec le Ministère de l'Agriculture pour 200 projets.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-year">2023</div>
+          <h4>Expansion Afrique du Nord</h4>
+          <p>Ouverture en Tunisie et Algérie avec 3 nouveaux partenaires locaux.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-year">2024</div>
+          <h4>Programme OCP x AgroLink</h4>
+          <p>Lancement d'un programme de 50 M MAD pour la fertilisation raisonnée.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-year">2025</div>
+          <h4>Agrément officiel</h4>
+          <p>Obtention de l'agrément réglementaire N° FP-2025-01.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESSUS -->
+  <section class="pad bg-blanc">
+    <div class="reveal">
+      <p class="section-label">Comment ça marche</p>
+      <h2 class="section-title">Devenez partenaire en 4 étapes.</h2>
+      <div class="sep"></div>
+    </div>
+    <div class="process">
+      <!-- ===== MODIFIER : étapes du processus ===== -->
+      <div class="proc-step reveal"><div class="proc-num">1</div><h4>Prise de contact</h4><p>Remplissez notre formulaire ou appelez-nous pour discuter de vos objectifs.</p></div>
+      <div class="proc-step reveal reveal-delay-1"><div class="proc-num">2</div><h4>Audit & stratégie</h4><p>Notre équipe analyse vos besoins et co-conçoit un dispositif sur-mesure.</p></div>
+      <div class="proc-step reveal reveal-delay-2"><div class="proc-num">3</div><h4>Déploiement</h4><p>Mise en place opérationnelle et sélection des projets agricoles à financer.</p></div>
+      <div class="proc-step reveal reveal-delay-3"><div class="proc-num">4</div><h4>Suivi & impact</h4><p>Rapport d'impact régulier avec indicateurs clés et visibilité de marque.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:44px;">
+      <a href="contact.html" class="btn btn-primary">Contactez-nous</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="footer-brand"><div class="logo-footer">AgroLink</div><p>La plateforme de financement participatif dédiée à la transition agricole et alimentaire.</p></div>
+      <div class="footer-col"><h4>Soutenir</h4><a href="projets.html">Projets en don</a><a href="contact.html">Besoin d'aide ?</a></div>
+      <div class="footer-col"><h4>Investir</h4><a href="investir.html">Prêt rémunéré</a><a href="investir.html">Statistiques</a></div>
+      <div class="footer-col"><h4>AgroLink</h4><a href="manifeste.html">Notre manifeste</a><a href="partenaires.html">Partenaires</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Contact</h4><a href="tel:+212522000000">+212 5 22 00 00 00</a><a href="mailto:contact@agrolink.ma">contact@agrolink.ma</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>Fait avec ❤️ par AgroLink | Copyright © <span id="annee"></span></p>
+      <p class="copy">Investir présente un risque de perte en capital.</p>
+    </div>
+  </footer>
+  <button id="btn-top">↑</button>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
